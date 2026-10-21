@@ -1,9 +1,9 @@
-// Base class
+
 class Person {
     protected String name;
     protected int age;
 
-    // Base class constructor
+    
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
@@ -14,25 +14,24 @@ class Person {
     }
 }
 
-// Single Inheritance: Student inherits from Person
 class Student extends Person {
     private int rollNumber;
     private String course;
 
     public Student(String name, int age, int rollNumber, String course) {
-        super(name, age); // Constructor chaining using super
+        super(name, age); 
         this.rollNumber = rollNumber;
         this.course = course;
     }
 
     @Override
     public void displayInfo() {
-        super.displayInfo(); // Method reuse from base class
+        super.displayInfo(); 
         System.out.println("Roll No: " + rollNumber + " | Course: " + course);
     }
 }
 
-// Intermediate class for Multilevel Inheritance
+
 class Employee extends Person {
     protected int empId;
     protected double salary;
@@ -50,25 +49,25 @@ class Employee extends Person {
     }
 }
 
-// Multilevel Inheritance: Faculty inherits from Employee, which inherits from Person
+
 class Faculty extends Employee {
     private String department;
     private String specialization;
 
     public Faculty(String name, int age, int empId, double salary, String department, String specialization) {
-        super(name, age, empId, salary); // Chains up to Employee and Person
+        super(name, age, empId, salary); 
         this.department = department;
         this.specialization = specialization;
     }
 
     @Override
     public void displayInfo() {
-        super.displayInfo(); // Reuses Employee's displayInfo
+        super.displayInfo(); 
         System.out.println("Department: " + department + " | Specialization: " + specialization);
     }
 }
 
-// Main execution class
+
 public class InheritanceDemo {
     public static void main(String[] args) {
         System.out.println("=== Single Inheritance Test ===");
